@@ -545,7 +545,7 @@ body{
         text-align: center;
         font-size: 100px;
         animation-name: sFade ;
-        animation-duration: 5s;
+        animation-duration: 10s;
         animation-iteration-count: infinite;
     }
     @keyframes sFade {
