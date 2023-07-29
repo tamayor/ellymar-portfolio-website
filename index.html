@@ -10,23 +10,25 @@
     <title>Elly Mar Portfolio</title>
 </head>
 <body>
-    <header class="header">
+    <button class="header-button" onclick="showHeader()">&equiv;</button>
+    <header class="header" id="header" >
+        <button class="header-button-close" onclick="hideHeader()">&times;</button>
         <img src="./website-logo.png" class="website-logo">
         <nav class="navbar">
-            <a href="#introduction"><h3>Introduction</h3></a>
-            <a href="#stories"><h3>Stories</h3></a>
+            <a href="#introduction" onclick="hideHeader()"><h3>Introduction</h3></a>
+            <a href="#stories" onclick="hideHeader()"><h3>Stories</h3></a>
             <div class="more-stories">
-                <a href="#stories-0">Teasers</a>
-                <a href="#stories-1">Films</a>
-                <a href="#stories-2">Fun Commercials</a>
-                <a href="#stories-3">Clients</a>
+                <a href="#stories-0" onclick="hideHeader()" onclick="hideHeader()">Teasers</a>
+                <a href="#stories-1" onclick="hideHeader()">Films</a>
+                <a href="#stories-2" onclick="hideHeader()">Fun Commercials</a>
+                <a href="#stories-3" onclick="hideHeader()">Clients</a>
                 <!--
                     <a href="#stories-4">Vlogs</a>
                 
                     <a href="#stories-5">Collabs</a>
                 -->
             </div>
-            <a href="#achievements  "><h3>Achievements</h3></a>
+            <a href="#achievements" onclick="hideHeader()"><h3>Achievements</h3></a>
         </nav>
     </header>
     
@@ -34,7 +36,7 @@
         <section id="introduction" class="introduction-info">
             <h1>Hi I'm Elly Mar</h1>
             <div class="introduction-info">
-                <img src="./Elly.jpg" style="width:200px">
+                <img src="./Elly.jpg" class="intro-img">
                 <p>based in Iloilo, Philippines</p>
                 <video id="background-video" autoplay loop muted>
                     <source src="./black background paper texture stop motion.mp4" type="video/mp4">
@@ -249,7 +251,7 @@
                         <p class="stats-description">Years of Experience</p>
                     </div>
                     <div class="hr"></div>
-                    <img class="footer-img" src="./Elly.jpg" style="width: 250px"> 
+                    <img class="footer-img" src="./Elly.jpg"> 
                     <div class="hr"></div>
                     <div class="no-prj">
                         <h1 class="stats">250+</h1>

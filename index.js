@@ -1,5 +1,23 @@
 
 
+const showHeader = ()=>{
+    const h = document.getElementById('header');
+    if(h.style.display === 'none'){
+        h.style.display = 'block';
+
+    } else {
+        h.style.display = 'none';
+    }
+}
+const hideHeader = ()=>{
+    const h = document.getElementById('header');
+    if(h.style.display === 'block'){
+        h.style.display = 'none';
+    } else {
+        h.style.display = 'block';
+    }
+    
+}
 
 
 function revealAnswer1(){

@@ -20,7 +20,7 @@ body{
 @media (min-width:1000px) {
     
     .header{
-        display: flex;
+       
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;  
@@ -208,9 +208,30 @@ body{
 
 
 @media (min-width:300px)and (max-width: 999px){
-    
+    .header-button{
+        font-size: smaller;
+        position: fixed;
+        outline: none;
+        border: none;
+        margin: 10px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        color: var(--color-1);
+        
+    }
+    .header-button-close{
+        font-size: smaller;
+        position: absolute;
+        background-color: transparent;
+        color: var(--color-1);
+        border: none;
+        z-index: 1;
+    }
+
     .header{
-        display: flex;
+        z-index: 1;
+        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;  
@@ -219,20 +240,56 @@ body{
         top: 0;
         left: 0;
         margin: 0;
-        width: 25%;
+        width: 100%;
         height: 100%;
         padding: 10px;
+        -webkit-mask: linear-gradient( -90deg , transparent 5%,black 90%);
+        mask: linear-gradient( -90deg , transparent 5%,black 90%);
+        animation: showHeader .5s ease;
     }
+    @keyframes showHeader {
+        from {
+            transform: translateX(-100px);
+            
+        }
+        to {
+          transform: translateX(0);
+        }
+    }
+      
     .website-logo{
         width: 80px;
+        position: relative;
     }
+    .website-logo:active, .website-logo:focus, .website-logo:hover{
+        width: 80px;
+        animation-name: logoFall;
+        animation-duration: 3s;
+    }
+    @keyframes logoFall {
+        1%{
+            transform: translateY(0);
+        }
+        10%{
+            transform: translateY(10px);
+        }
+        30%{
+            transform: translateY(600px);
+        }
+    }
+    .navbar-button{
+        display: block;
+    } 
     .navbar{
         display: flex;
         flex-direction: column;
     }
     .navbar a{
+        width: 50%;
         text-decoration: none;
-        color: var(--color-3)
+        color: var(--color-3);
+        padding: 10px;
+        margin: 0;
     }
     a{
         font-size: small;
@@ -259,35 +316,83 @@ body{
         color: var(--color-1);
     }
     .introduction-info h1{
-        transform: translateX(50px);
-        font-size: 50px;
+        font-size: 40px ;
     }
     .introduction-info img{
+        width: 250px;
         border-bottom: var(--color-2) 5px solid;
     }
+    .intro-img:active, .intro-img:focus, .intro-img:hover{
+        animation-name: iMove;
+        animation-duration: 3s;
+    }
+    
     .questions{
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     }
-    .questions h2{
+    .questions h2 {
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: small;
         text-align: center;
         background-color: var(--darker-orange);
-        padding: 5px;
+        padding: 5px; /* Updated padding value */
         height: 30px;
         border-radius: 10px;
         margin: 0;
+      }
+    #q1:hover, #q1:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
     }
+    #q2:hover, #q2:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+    #q3:hover, #q3:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+    #q4:hover, #q4:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+    #q5:hover, #q5:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+      
+      @keyframes qButton {
+        0% {
+            font-size: small;
+            transition: font-size ease;
+        }
+        50%{
+            font-size: medium;
+            transition: font-size ease;
+        }
+        80%{
+            font-size: small;
+            transition: font-size ease;
+        }
+      }
+      
     .questions h3{
         margin: 0 0 10px;
         opacity: 0;
         font-size: small;
         text-align: center;
         height: 30px;
+        transition: opacity 1s ease;
     }
+    
     #background-video {
         width: 100%;
         height: 100%;
@@ -301,9 +406,7 @@ body{
         opacity: 0.4;
     }
     main{
-        width: 80%;
-        height: 100vh;
-        margin-left: 20%;   
+        height: 100vh;  
     }
     #stories{
         background-color: var(--color-2);
@@ -341,14 +444,38 @@ body{
     }
 
     .captions{
+        position: relative;
         text-align: center;
         margin: auto;
         width: fit-content;
-
+        animation-name: cJump ;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes cJump {
+        0%{
+            transform: rotateZ(0deg);
+            font-weight: normal;
+            font-size: medium;
+        }
+        5%{
+            transform: rotateZ(2deg);
+            font-size: large;
+            font-weight: bolder;
+        }
+        95%{
+            transform: rotateZ(2deg);
+            font-size: large;
+            font-weight: bolder;
+        }
+        100%{
+            transform: rotateZ(0deg);
+            font-size: small;
+            font-weight: medium;
+        }
     }
     .ytvid{
-        width: 450px;
-        height: 350px;
+        width: 300px;
         object-fit: cover;
         padding: 40px;
         margin-bottom: 10px;
@@ -358,21 +485,52 @@ body{
         padding: 30px;
         
     }
+    iframe{
+        border-radius: 20px;
+    }
     footer{
         width: 80%;
         height: 50%;
         margin:auto; 
     }
-    #achievements{
+    #achievements {
         display: flex;
         flex-direction: column;
         margin: 40px auto;
         align-items: center;
         justify-content: space-between;
-    }
-    .footer-img{
+      }
+      
+      #achievements:hover .footer-img,  #achievements:active .footer-img {
+        animation-name: iMove;
+        animation-duration: 5s;
+      }
+      
+      .footer-img {
+        position: relative;
         margin: 0 20px;
-    }
+        width: 250px;
+      }
+      
+      @keyframes iMove {
+        0% {
+          width: 250px;
+          transform: rotateZ(0);
+        }
+        10% {
+          width: 260px;
+          transform: rotateZ(5deg);
+        }
+        90%{
+            width: 260px;
+            transform: rotateZ(5deg);
+        }
+        100% {
+            width: 250px;
+            transform: rotateZ(0);
+          }
+      }
+      
     .hr{
         width: 1px;
         height: 50px;
@@ -385,6 +543,35 @@ body{
     .stats{
         text-align: center;
         font-size: 100px;
+        animation-name: sFade ;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes sFade {
+        0%{
+            -webkit-mask: linear-gradient(-90deg,transparent, black);
+        }
+        1%{
+            -webkit-mask: linear-gradient(90deg, transparent, black, transparent);
+        }
+        2%{
+            -webkit-mask: linear-gradient(90deg, transparent, black);
+        }
+        3%{
+            -webkit-mask: linear-gradient(90deg, transparent, transparent);
+        }
+        68%{
+            -webkit-mask: linear-gradient(90deg, transparent, transparent);
+        }
+        69%{
+            -webkit-mask: linear-gradient(90deg,black, transparent);
+        }
+        70%{
+            -webkit-mask: linear-gradient(90deg, black, black);
+        }
+        80%{
+            -webkit-mask: linear-gradient(90deg, black, black);
+        }
     }
     .stats-description, .tagline{
         text-align: center;
