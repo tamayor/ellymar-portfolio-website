@@ -202,6 +202,36 @@ body{
         height: max-content;
         background: linear-gradient(180deg, rgba(122,192,249,1) 0%, rgba(78,167,216,1) 50%, rgba(122,192,249,1) 100%);
     }
+     .stories-container:hover .title-container{
+        animation-name: storiesTitleExpand;
+        animation-duration: 5s;
+    }
+    @keyframes storiesTitleExpand {
+        10%{
+            background-color: black;
+            margin: 10;
+        }
+        20%{
+            background-color: black;
+            margin: 10;
+            padding:10px 100px;
+            font-size: 30px;
+            box-shadow: 0 0 20px 5px rgb(255,255,255,0.5);
+            background: linear-gradient(180deg, rgb(34, 103, 160) 0%, rgb(23, 85, 136) 50%,rgb(34, 103, 160) 100%);
+        }
+        85%{    
+            background-color: black;
+            margin: 10;
+            padding:10px 100px;
+            font-size: 30px;
+            box-shadow: 0 0 20px 1px rgb(255,255,255,0.3);
+            background: linear-gradient(180deg, rgb(34, 103, 160) 0%, rgb(23, 85, 136) 50%,rgb(34, 103, 160) 100%);
+        }
+        90%{
+            background-color: black;
+            margin: 10;
+        }
+    }
     .slides{
         display: flex;
         overflow-x: scroll;
@@ -257,11 +287,61 @@ body{
         object-fit: cover;
         padding: 30px;
         margin-bottom: 10px;
-        transition: padding 0.5s     ease-in-out;
+        transition: padding 1s ease-in-out;
     }
     .ytvid:hover{
         padding: 20px;
-        
+    }
+    .ytvid-caption-container:hover iframe, .ytvid-caption-container:active iframe, .ytvid-caption-container:focus iframe
+    {
+        animation-name: iframeShadow;
+        animation-duration: 10s;
+    }
+    @keyframes iframeShadow {
+        0%{
+            box-shadow: 0px 0px 0px 1px rgb(0,0,0,1);
+            border: 0px solid var(--color-3);
+        }
+        3%{
+            box-shadow: 10px 10px 0px 1px rgb(0,0,0,1);
+            border: 5px solid var(--color-3);
+        }
+        80%{
+            box-shadow: 10px 10px 0px 1px rgb(0,0,0,1);
+            border: 5px solid var(--color-3);
+        }
+        100%{
+            box-shadow: 0px 0px 0px 1px rgb(0,0,0,1);
+            border: 0px solid var(--color-3);
+        }
+    }
+    .ytvid-caption-container:hover .captions, .ytvid-caption-container:focus .captions{
+        animation-name: captionChange;
+        animation-duration: 10s;
+    }
+    @keyframes captionChange {
+        0%{
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        3%{
+            border-radius: 5px;
+            color: var(--color-1);
+            background-color: black;
+            padding: 5px;
+        }
+        80%{
+            border-radius: 5px;
+            color: var(--color-1);
+            background-color: black;
+            padding: 5px;
+        }
+        100%{
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 10px;
+        }
     }
     footer{
         width: 80%;
@@ -286,14 +366,19 @@ body{
         0% {
           width: 250px;
           transform: rotateZ(0);
+          box-shadow: 0px 0px 0px 0px rgb(255,255,255,1);
         }
         10% {
           width: 260px;
           transform: rotateZ(5deg);
+          box-shadow: 0px 0px 50px 3px rgb(255, 138, 0,.5); 
+          border: 2px dotted var(--color-2);
         }
         90%{
             width: 260px;
             transform: rotateZ(5deg);
+            box-shadow: 0px 0px 100px 3px rgb(255, 184, 0, 1);
+            border: 3px dashed var(--color-1);
         }
         100% {
             width: 250px;
@@ -320,17 +405,28 @@ body{
         0%{
             -webkit-mask: linear-gradient(90deg,transparent, black);
         }
-        15%{
+        2%{
             -webkit-mask: linear-gradient(90deg, transparent, transparent);
         }
-        55%{
-            -webkit-mask: transparent;
+        40%{
+            -webkit-mask: linear-gradient(90deg, transparent, transparent);
         }
-        75%{
-            -webkit-mask: linear-gradient(90deg,black, transparent);
+        42%{
+            -webkit-mask: linear-gradient(-90deg,transparent, black);
         }
-        80%{
-            -webkit-mask: linear-gradient(90deg, black, black);
+        43%{
+            -webkit-mask: linear-gradient(-90deg,transparent, black);
+        }
+        44%{
+            -webkit-mask: none;
+            mask: none;
+        }
+        99%{
+            -webkit-mask: none;
+            mask: none;
+        }
+        100%{
+            -webkit-mask: linear-gradient(90deg,transparent, black);
         }
     }
     .stats-description, .tagline{
