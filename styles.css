@@ -774,13 +774,13 @@ body{
         0%{
             -webkit-mask: linear-gradient(90deg,transparent, black);
         }
-        15%{
+        2%{
             -webkit-mask: linear-gradient(90deg, transparent, transparent);
         }
         55%{
             -webkit-mask: transparent;
         }
-        75%{
+        79%{
             -webkit-mask: linear-gradient(90deg,black, transparent);
         }
         80%{
