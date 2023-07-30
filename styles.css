@@ -783,6 +783,12 @@ body{
         70%{
             -webkit-mask: linear-gradient(90deg, black, black);
         }
+        99%{
+            -webkit-mask: linear-gradient(90deg, black, black);
+        }
+        100%{
+            -webkit-mask: linear-gradient(90deg,transparent, black);
+        }
     }
     .stats-description, .tagline{
         text-align: center;
