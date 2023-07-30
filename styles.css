@@ -279,69 +279,60 @@ body{
         }
     }
     iframe{
+        position: relative;
         border-radius: 20px;
+        margin: 10px;
+        width: 300px;
+        top: -10px;
+            right: -10px;
+            box-shadow: -10px 10px 0 2px rgb(0,0,0,1);
+            border: 2px solid var(--color-3);
+        
+    }
+    .ytvid-caption-container:hover iframe{
+        animation-name: iframeAnimate;
+        animation-duration: 5s;
+    }
+    @keyframes iframeAnimate {
+        0%{
+            top: -10px;
+            right: -10px;
+            box-shadow: -10px 10px 0 2px rgb(0,0,0,1);
+            border: 2px solid var(--color-3);
+        }
+        5%{
+            top: 0;
+            right: 0;
+            box-shadow: 0px 0px 0 0px rgb(0,0,0,1);
+            box-shadow: 0 0 20px 2px rgb(255,255,255,1);
+            border: none;
+        }
+        90%{
+            top: 0;
+            right: 0;
+            box-shadow: 0 0 00px 0px rgb(255,255,255,1);
+            border: none;
+        }
+        100%{
+            top: -10px;
+            right: -10px;
+            box-shadow: -10px 10px 0 2px rgb(0,0,0,1);
+            border: 2px solid var(--color-3);
+        }
     }
     .ytvid{
-        width: 450px;
-        height: 350px;
         object-fit: cover;
-        padding: 30px;
-        margin-bottom: 10px;
+        margin: 20px 0;
         transition: padding 1s ease-in-out;
+        display: flex;
+        justify-content: center;
     }
-    .ytvid:hover{
-        padding: 20px;
-    }
-    .ytvid-caption-container:hover iframe, .ytvid-caption-container:active iframe, .ytvid-caption-container:focus iframe
-    {
-        animation-name: iframeShadow;
-        animation-duration: 10s;
-    }
-    @keyframes iframeShadow {
-        0%{
-            box-shadow: 0px 0px 0px 1px rgb(0,0,0,1);
-            border: 0px solid var(--color-3);
-        }
-        3%{
-            box-shadow: 10px 10px 0px 1px rgb(0,0,0,1);
-            border: 5px solid var(--color-3);
-        }
-        80%{
-            box-shadow: 10px 10px 0px 1px rgb(0,0,0,1);
-            border: 5px solid var(--color-3);
-        }
-        100%{
-            box-shadow: 0px 0px 0px 1px rgb(0,0,0,1);
-            border: 0px solid var(--color-3);
-        }
-    }
-    .ytvid-caption-container:hover .captions, .ytvid-caption-container:focus .captions{
-        animation-name: captionChange;
-        animation-duration: 10s;
-    }
-    @keyframes captionChange {
-        0%{
-            background-color: transparent;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        3%{
-            border-radius: 5px;
-            color: var(--color-1);
-            background-color: black;
-            padding: 5px;
-        }
-        80%{
-            border-radius: 5px;
-            color: var(--color-1);
-            background-color: black;
-            padding: 5px;
-        }
-        100%{
-            background-color: transparent;
-            padding: 10px;
-            border-radius: 10px;
-        }
+    .ytvid-caption-container{
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     footer{
         width: 80%;
@@ -748,11 +739,11 @@ body{
         padding: 30px;
     }
     iframe{
-        border-radius: 20px;
-       
+        border-radius: 10px;
     }
     .ytvid-caption-container:hover iframe, .ytvid-caption-container:active iframe, .ytvid-caption-container:focus iframe
     {
+        
         animation-name: iframeShadow;
         animation-duration: 10s;
     }
