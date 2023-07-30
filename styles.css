@@ -17,13 +17,19 @@ body{
     background-color: var(--background-color);
 }
 
-@media (min-width:1000px) {
-    
+@media (min-width:601px) {
+    .header-button{
+        display: none;
+        
+    }
+    .header-button-close{
+        display: none;
+    }
     .header{
-       
+        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;  
+        justify-content: center;  
         background-color: black;
         position: fixed;
         top: 0;
@@ -34,13 +40,27 @@ body{
         padding: 10px;
     }
     .website-logo{
-        width: 300px;
+        width: 100px;
+    }
+    .website-logo:active{
+        width: 100px;
+        animation-name: logoFall;
+        animation-duration: 3s;
+    }
+    @keyframes logoFall {
+        1%{
+            transform: translateY(0);
+        }
+        30%{
+            transform: translateY(600px);
+        }
     }
     .navbar{
         display: flex;
         flex-direction: column;
     }
     .navbar a{
+        text-align: center;
         text-decoration: none;
         color: var(--color-3)
     }
@@ -73,6 +93,13 @@ body{
     .introduction-info img{
         border-bottom: var(--color-2) 5px solid;
     }
+    .intro-img{
+        width: 300px;
+    }
+    .intro-img:hover{
+        animation-name: iMove;
+        animation-duration: 2s;
+    }
     .questions{
         display: grid;
         grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
@@ -84,7 +111,7 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: medium;
+        font-size: small;
         text-align: center;
         background-color: var(--darker-orange);
         padding: 10px;
@@ -96,7 +123,49 @@ body{
         font-size: small;
         text-align: center;
         height: 30px;
+        transition: opacity 1s ease;
     }
+    #q1:hover, #q1:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+    #q2:hover, #q2:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+    #q3:hover, #q3:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+    #q4:hover, #q4:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+    #q5:hover, #q5:active{
+        font-size: small;
+        animation-name: qButton;
+        animation-duration: 5s;
+    }
+      
+      @keyframes qButton {
+        0% {
+            font-size: small;
+            transition: font-size ease;
+        }
+        50%{
+            font-size: medium;
+            transition: font-size ease;
+        }
+        80%{
+            font-size: small;
+            transition: font-size ease;
+        }
+      }
+      
     #background-video {
         width: 100%;
         height: 100%;
@@ -153,7 +222,34 @@ body{
         text-align: center;
         margin: auto;
         width: fit-content;
-
+        animation-name: cJump ;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes cJump {
+        0%{
+            transform: rotateZ(0deg);
+            font-weight: normal;
+            font-size: medium;
+        }
+        5%{
+            transform: rotateZ(2deg);
+            font-size: larger;
+            font-weight: bolder;
+        }
+        95%{
+            transform: rotateZ(2deg);
+            font-size: larger   ;
+            font-weight: bolder;
+        }
+        100%{
+            transform: rotateZ(0deg);
+            font-size: small;
+            font-weight: medium;
+        }
+    }
+    iframe{
+        border-radius: 20px;
     }
     .ytvid{
         width: 450px;
@@ -179,8 +275,31 @@ body{
         justify-content: space-between;
     }
     .footer-img{
+        width: 250px;
         margin: 0 20px;
     }
+    .footer-img:hover{
+        animation-name: iMove;
+        animation-duration: 2s;
+    }
+    @keyframes iMove {
+        0% {
+          width: 250px;
+          transform: rotateZ(0);
+        }
+        10% {
+          width: 260px;
+          transform: rotateZ(5deg);
+        }
+        90%{
+            width: 260px;
+            transform: rotateZ(5deg);
+        }
+        100% {
+            width: 250px;
+            transform: rotateZ(0);
+          }
+      }
     .hr{
         width: 1px;
         height: 300px;
@@ -193,6 +312,26 @@ body{
     .stats{
         text-align: center;
         font-size: 100px;
+        animation-name: sFade ;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes sFade {
+        0%{
+            -webkit-mask: linear-gradient(90deg,transparent, black);
+        }
+        15%{
+            -webkit-mask: linear-gradient(90deg, transparent, transparent);
+        }
+        55%{
+            -webkit-mask: transparent;
+        }
+        75%{
+            -webkit-mask: linear-gradient(90deg,black, transparent);
+        }
+        80%{
+            -webkit-mask: linear-gradient(90deg, black, black);
+        }
     }
     .stats-description, .tagline{
         text-align: center;
@@ -207,7 +346,7 @@ body{
 /***************************************************************/
 
 
-@media (min-width:300px)and (max-width: 999px){
+@media (min-width:300px)and (max-width: 600px){
     .header-button{
         font-size: smaller;
         position: fixed;
@@ -223,6 +362,7 @@ body{
     .header-button-close{
         font-size: smaller;
         position: absolute;
+        top: 80px;
         background-color: transparent;
         color: var(--color-1);
         border: none;
@@ -233,7 +373,7 @@ body{
         z-index: 1;
         display: none;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
         justify-content: space-evenly;  
         background-color: black;
         position: fixed;
@@ -269,9 +409,6 @@ body{
     @keyframes logoFall {
         1%{
             transform: translateY(0);
-        }
-        10%{
-            transform: translateY(10px);
         }
         30%{
             transform: translateY(600px);
@@ -427,10 +564,39 @@ body{
         height: max-content;
         background: linear-gradient(180deg, rgba(122,192,249,1) 0%, rgba(78,167,216,1) 50%, rgba(122,192,249,1) 100%);
     }
+    .stories-container:hover .title-container{
+        animation-name: storiesTitleExpand;
+        animation-duration: 5s;
+    }
+    @keyframes storiesTitleExpand {
+        10%{
+            background-color: black;
+            margin: 10;
+        }
+        20%{
+            background-color: black;
+            margin: 10;
+            padding:10px 100px;
+            font-size: small;
+            box-shadow: 0 0 20px 5px rgb(255,255,255,0.5);
+            background: linear-gradient(180deg, rgb(34, 103, 160) 0%, rgb(23, 85, 136) 50%,rgb(34, 103, 160) 100%);
+        }
+        85%{    
+            background-color: black;
+            margin: 10;
+            padding:10px 100px;
+            font-size: small;
+            box-shadow: 0 0 20px 1px rgb(255,255,255,0.3);
+            background: linear-gradient(180deg, rgb(34, 103, 160) 0%, rgb(23, 85, 136) 50%,rgb(34, 103, 160) 100%);
+        }
+        90%{
+            background-color: black;
+            margin: 10;
+        }
+    }
     .slides{
         display: flex;
         overflow-x: scroll;
-        flex-warp: warp;
     }
 
     .slides::-webkit-scrollbar {
@@ -479,15 +645,66 @@ body{
         width: 300px;
         object-fit: cover;
         padding: 40px;
-        margin-bottom: 10px;
+        margin-bottom: 10px;   
         transition: padding 0.5s     ease-in-out;
     }
     .ytvid:hover{
         padding: 30px;
-        
     }
     iframe{
         border-radius: 20px;
+       
+    }
+    .ytvid-caption-container:hover iframe, .ytvid-caption-container:active iframe, .ytvid-caption-container:focus iframe
+    {
+        animation-name: iframeShadow;
+        animation-duration: 10s;
+    }
+    @keyframes iframeShadow {
+        0%{
+            box-shadow: 0px 0px 0px 1px rgb(0,0,0,1);
+            border: 0px solid var(--color-3);
+        }
+        3%{
+            box-shadow: 10px 10px 0px 1px rgb(0,0,0,1);
+            border: 5px solid var(--color-3);
+        }
+        80%{
+            box-shadow: 10px 10px 0px 1px rgb(0,0,0,1);
+            border: 5px solid var(--color-3);
+        }
+        100%{
+            box-shadow: 0px 0px 0px 1px rgb(0,0,0,1);
+            border: 0px solid var(--color-3);
+        }
+    }
+    .ytvid-caption-container:hover .captions, .ytvid-caption-container:focus .captions{
+        animation-name: captionChange;
+        animation-duration: 10s;
+    }
+    @keyframes captionChange {
+        0%{
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        3%{
+            border-radius: 5px;
+            color: var(--color-1);
+            background-color: black;
+            padding: 5px;
+        }
+        80%{
+            border-radius: 5px;
+            color: var(--color-1);
+            background-color: black;
+            padding: 5px;
+        }
+        100%{
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 10px;
+        }
     }
     footer{
         width: 80%;
@@ -517,14 +734,19 @@ body{
         0% {
           width: 250px;
           transform: rotateZ(0);
+          box-shadow: 0px 0px 0px 0px rgb(255,255,255,1);
         }
         10% {
           width: 260px;
           transform: rotateZ(5deg);
+          box-shadow: 0px 0px 50px 3px rgb(255, 138, 0,.5); 
+          border: 2px dotted var(--color-2);
         }
         90%{
             width: 260px;
             transform: rotateZ(5deg);
+            box-shadow: 0px 0px 100px 3px rgb(255, 184, 0, 1);
+            border: 3px dashed var(--color-1);
         }
         100% {
             width: 250px;
@@ -550,30 +772,18 @@ body{
     }
     @keyframes sFade {
         0%{
-            -webkit-mask: linear-gradient(-90deg,transparent, black);
-        }
-        5%{
-            -webkit-mask: linear-gradient(90deg, transparent, black, transparent);
-        }
-        10%{
-            -webkit-mask: linear-gradient(90deg, transparent, black);
+            -webkit-mask: linear-gradient(90deg,transparent, black);
         }
         15%{
             -webkit-mask: linear-gradient(90deg, transparent, transparent);
         }
-        65%{
-            -webkit-mask: linear-gradient(90deg, transparent, transparent);
-        }
-        70%{
-            -webkit-mask: linear-gradient(90deg,black, transparent);
+        55%{
+            -webkit-mask: transparent;
         }
         75%{
-            -webkit-mask: linear-gradient(90deg, transparent 0%, black 50%, transparent 100%);
+            -webkit-mask: linear-gradient(90deg,black, transparent);
         }
         80%{
-            -webkit-mask: linear-gradient(90deg, black, black);
-        }
-        85%{
             -webkit-mask: linear-gradient(90deg, black, black);
         }
     }

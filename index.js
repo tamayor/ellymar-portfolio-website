@@ -1,9 +1,10 @@
 
 
 const showHeader = ()=>{
+    const isLaptopViewport = window.matchMedia("(min-width: 601px)").matches;
     const h = document.getElementById('header');
-    if(h.style.display === 'none'){
-        h.style.display = 'block';
+    if(h.style.display === 'none' && !isLaptopViewport){
+        h.style.display = 'flex';
 
     } else {
         h.style.display = 'none';
@@ -11,10 +12,13 @@ const showHeader = ()=>{
 }
 const hideHeader = ()=>{
     const h = document.getElementById('header');
-    if(h.style.display === 'block'){
+    const isLaptopViewport = window.matchMedia("(min-width: 601px)").matches;
+
+    if(h.style.display === 'flex' && !isLaptopViewport){
         h.style.display = 'none';
+        console.log("clicckkkkk")
     } else {
-        h.style.display = 'block';
+        h.style.display = 'flex';
     }
     
 }

@@ -11,24 +11,25 @@
 </head>
 <body>
     <button class="header-button" onclick="showHeader()">&equiv;</button>
-    <header class="header" id="header" >
+    <header class="header" id="header" id="nav-menu">
         <button class="header-button-close" onclick="hideHeader()">&times;</button>
         <img src="./website-logo.png" class="website-logo">
         <nav class="navbar">
-            <a href="#introduction" onclick="hideHeader()"><h3>Introduction</h3></a>
-            <a href="#stories" onclick="hideHeader()"><h3>Stories</h3></a>
+            <a id="nav-menu" href="#introduction" onclick="hideHeader()"><h3>Introduction</h3></a>
+            <a id="nav-menu" href="#stories" onclick="hideHeader()"><h3>Stories</h3></a>
             <div class="more-stories">
-                <a href="#stories-0" onclick="hideHeader()" onclick="hideHeader()">Teasers</a>
-                <a href="#stories-1" onclick="hideHeader()">Films</a>
-                <a href="#stories-2" onclick="hideHeader()">Fun Commercials</a>
-                <a href="#stories-3" onclick="hideHeader()">Clients</a>
+                <a  id="nav-menu" href="#stories-0" onclick="hideHeader()">Teasers</a>
+                <a id="nav-menu" href="#stories-1" onclick="hideHeader()">Films</a>
+                <a id="nav-menu" href="#stories-2" onclick="hideHeader()">Fun Commercials</a>
+                <a id="nav-menu" href="#stories-3" onclick="hideHeader()">Clients</a>
                 <!--
                     <a href="#stories-4">Vlogs</a>
-                
+                   
+
                     <a href="#stories-5">Collabs</a>
                 -->
             </div>
-            <a href="#achievements" onclick="hideHeader()"><h3>Achievements</h3></a>
+            <a id="nav-menu" href="#achievements" onclick="hideHeader()"><h3>Achievements</h3></a>
         </nav>
     </header>
     
@@ -70,7 +71,7 @@
             <section class="teasers stories-container" id="stories-0">
                 <h2 class="title-container">Teasers</h2>
                 <div class="slides">
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">His Alters</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%" 
@@ -80,7 +81,7 @@
                             </iframe>
                         </div>
                     </div>
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">Bayo</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%" 
@@ -90,7 +91,7 @@
                             </iframe>
                         </div>
                     </div>
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">Sayaw Season III</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%" 
@@ -100,7 +101,7 @@
                             </iframe>
                         </div>
                     </div>
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">Buenavista Tribal Video Teaser</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%" 
@@ -110,7 +111,7 @@
                             </iframe>
                         </div>
                     </div> 
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">WYSD</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -127,7 +128,7 @@
             <section class="films stories-container" id="stories-1">
                 <h2 class="title-container">Films</h2>
                 <div class="slides">
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">His Alters</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -137,7 +138,7 @@
                             </iframe>
                         </div>
                     </div>
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">Bayo</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -152,7 +153,7 @@
             <section class="commercials stories-container" id="stories-2">
                <h2 class="title-container">Fun Commercials</h2>
                 <div class="slides">
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">COVID 19 vaccine</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -162,7 +163,7 @@
                             </iframe>
                         </div>
                     </div>
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">One Town One Product</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -172,7 +173,7 @@
                             </iframe>
                         </div>
                     </div>
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">Tubungan</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -188,7 +189,7 @@
             <section class="clients stories-container" id="stories-3">
                 <h2 class="title-container">Clients</h2>
                  <div class="slides">
-                     <div>
+                     <div class="ytvid-caption-container">
                          <h3 class="captions">FlipKingX</h3>
                          <div class="ytvid">
                              <iframe width="100%" height="100%"
@@ -198,7 +199,7 @@
                              </iframe>
                          </div>
                      </div>
-                     <div>
+                     <div class="ytvid-caption-container">
                         <h3 class="captions">Vertiv </h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -208,7 +209,7 @@
                             </iframe>
                         </div>
                     </div>  
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">Gotchu</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -218,7 +219,7 @@
                             </iframe>
                         </div>
                     </div> 
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">Yeelight</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
@@ -228,7 +229,7 @@
                             </iframe>
                         </div>
                     </div>  
-                    <div>
+                    <div class="ytvid-caption-container">
                         <h3 class="captions">DOST CEST</h3>
                         <div class="ytvid">
                             <iframe width="100%" height="100%"
