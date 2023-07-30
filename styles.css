@@ -781,7 +781,7 @@ body{
             -webkit-mask: linear-gradient(90deg, transparent, transparent);
             opacity: 0;
         }
-        44%{
+        50%{
             -webkit-mask: none;
             mask: none;
             opacity: 1;
