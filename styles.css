@@ -780,12 +780,6 @@ body{
         40%{
             -webkit-mask: linear-gradient(90deg, transparent, transparent);
         }
-        41%{
-            -webkit-mask: linear-gradient(90deg,black, transparent);
-        }
-        42%{
-            -webkit-mask: linear-gradient(90deg,black, transparent);
-        }
         44%{
             -webkit-mask: linear-gradient(90deg, black, black);
         }
